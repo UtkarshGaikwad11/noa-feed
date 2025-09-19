@@ -30,7 +30,9 @@ const articles = [
 ---
 
 <!-- NAV: put the checkbox inside the nav and BEFORE the mobile list -->
-<nav class="w-full border-b border-gray-300 relative z-[999] shadow-sm">
+<nav
+    class="w-full border-b border-gray-300 dark:border-gray-800 relative z-[999] shadow-sm"
+>
     <!-- Hidden checkbox (peer) — must be inside nav and before mobile ul -->
     <input id="mobileMenuToggle" type="checkbox" class="hidden peer" />
 
@@ -52,41 +54,76 @@ const articles = [
             class="hidden lg:flex flex-col lg:flex-row lg:items-center lg:space-x-1 absolute lg:static top-[75px] left-0 w-full lg:w-auto bg-black lg:bg-transparent font-[anton]"
         >
             <li>
-                <a class="block px-5 py-3 lg:py-6  hover:text-[#3CFFD0] cursor-pointer">Home</a>
+                <a
+                    class="block px-5 py-3 lg:py-6 hover:text-[#3CFFD0] cursor-pointer"
+                    >Home</a
+                >
             </li>
 
             <li class="group relative">
-                <a class="block px-5 py-3 lg:py-6  hover:text-[#3CFFD0] cursor-pointer">Features</a>
-                <ul class="hidden absolute -left-10 top-18 bg-black w-52 group-hover:block ">
+                <a
+                    class="block px-5 py-3 lg:py-6 hover:text-[#3CFFD0] cursor-pointer"
+                    >Features</a
+                >
+                <ul
+                    class="hidden absolute -left-10 top-18 bg-black w-52 group-hover:block"
+                >
                     <li class="border-t border-[#3CFFD0]">
-                        <a class="block px-5 py-3 text-white hover:bg-gray-900 cursor-pointer" >Category Page</a>
+                        <a
+                            class="block px-5 py-3 text-white hover:bg-gray-900 cursor-pointer"
+                            >Category Page</a
+                        >
                     </li>
                     <li>
-                        <a class="block px-5 py-3 text-white hover:bg-gray-900 cursor-pointer">Blog Page</a>
+                        <a
+                            class="block px-5 py-3 text-white hover:bg-gray-900 cursor-pointer"
+                            >Blog Page</a
+                        >
                     </li>
                     <li>
-                        <a class="block px-5 py-3 text-white hover:bg-gray-900 cursor-pointer">Post Single</a>
+                        <a
+                            class="block px-5 py-3 text-white hover:bg-gray-900 cursor-pointer"
+                            >Post Single</a
+                        >
                     </li>
                     <li>
-                        <a class="block px-5 py-3 text-white hover:bg-gray-900 cursor-pointer">Post Video</a>
+                        <a
+                            class="block px-5 py-3 text-white hover:bg-gray-900 cursor-pointer"
+                            >Post Video</a
+                        >
                     </li>
                     <li>
-                        <a class="block px-5 py-3 text-white hover:bg-gray-900 cursor-pointer">Contact Page</a>
+                        <a
+                            class="block px-5 py-3 text-white hover:bg-gray-900 cursor-pointer"
+                            >Contact Page</a
+                        >
                     </li>
                 </ul>
             </li>
 
             <li>
-                <a class="block px-5 py-3 lg:py-6  hover:text-[#3CFFD0] cursor-pointer">Fashion</a>
+                <a
+                    class="block px-5 py-3 lg:py-6 hover:text-[#3CFFD0] cursor-pointer"
+                    >Fashion</a
+                >
             </li>
             <li>
-                <a  class="block px-5 py-3 lg:py-6  hover:text-[#3CFFD0] cursor-pointer">Lifestyle</a>
+                <a
+                    class="block px-5 py-3 lg:py-6 hover:text-[#3CFFD0] cursor-pointer"
+                    >Lifestyle</a
+                >
             </li>
             <li>
-                <a class="block px-5 py-3 lg:py-6  hover:text-[#3CFFD0] cursor-pointer">Shop</a>
+                <a
+                    class="block px-5 py-3 lg:py-6 hover:text-[#3CFFD0] cursor-pointer"
+                    >Shop</a
+                >
             </li>
             <li>
-                <a class="block px-5 py-3 lg:py-6  hover:text-[#3CFFD0] cursor-pointer">Contact</a>
+                <a
+                    class="block px-5 py-3 lg:py-6 hover:text-[#3CFFD0] cursor-pointer"
+                    >Contact</a
+                >
             </li>
         </ul>
 
@@ -107,28 +144,25 @@ const articles = [
             <!-- Search Button (mobile only) -->
             <button
                 id="mobileSearchBtn"
-                class=" hover:text-[#3CFFD0] md:hidden block"
+                class="hover:text-[#3CFFD0] md:hidden block"
             >
                 <i class="fa fa-search"></i>
             </button>
 
             <div
-  id="mobileSearchBackdrop"
-  class="fixed inset-0 bg-black/50 z-[1090] opacity-0 pointer-events-none transition-opacity duration-500 lg:hidden"
-></div>
-
+                id="mobileSearchBackdrop"
+                class="fixed inset-0 bg-black/50 z-[1090] opacity-0 pointer-events-none transition-opacity duration-500 lg:hidden"
+            >
+            </div>
 
             <!-- Theme Toggle -->
-            <button
-                id="theme-toggle"
-                class=" hover:text-[#3CFFD0]"
-            >
+            <button id="theme-toggle" class="hover:text-[#3CFFD0]">
                 <i class="fas fa-moon hidden lg:inline"></i>
             </button>
 
             <!-- Subscribe (desktop only) -->
             <button
-                class="hidden lg:flex items-center border border-[#3CFFD0]  px-6 py-3 hover:bg-[#3CFFD0] hover:text-black transition"
+                class="hidden lg:flex items-center border border-[#3CFFD0] px-6 py-3 hover:bg-[#3CFFD0] hover:text-black transition"
                 style="font-family: 'Anton', sans-serif;"
             >
                 <i class="fas fa-play mr-2"></i>Subscribe
@@ -137,7 +171,7 @@ const articles = [
             <!-- Right-side menu trigger (desktop only) -->
             <button
                 id="rightMenuBtn"
-                class="hidden lg:inline-block  cursor-pointer"
+                class="hidden lg:inline-block cursor-pointer"
             >
                 <i class="fas fa-bars"></i>
             </button>
@@ -150,10 +184,7 @@ const articles = [
             </div>
 
             <!-- Mobile menu button (label for the checkbox) -->
-            <label
-                for="mobileMenuToggle"
-                class="lg:hidden  cursor-pointer"
-            >
+            <label for="mobileMenuToggle" class="lg:hidden cursor-pointer">
                 <i class="fas fa-bars"></i>
             </label>
         </div>
@@ -161,23 +192,23 @@ const articles = [
 
     <!-- MOBILE NAV -->
     <ul
-        class="lg:hidden flex flex-col bg-black w-full absolute top-[73px] left-0
+        class="lg:hidden flex flex-col w-full absolute top-[73px] left-0
          max-h-0 overflow-hidden transition-all duration-500 ease-in-out
-         peer-checked:max-h-screen"
+         peer-checked:max-h-screen dark:bg-black dark:text-white bg-white text-black"
     >
-        <li class="border-b border-gray-800">
-            <a href="#" class="block px-4 py-3 text-white">Home</a>
+        <li class="border-b border-gray-300 dark:border-gray-800">
+            <a href="#" class="block px-4 py-3">Home</a>
         </li>
 
         <!-- Features  -->
-        <li class="border-b border-gray-800">
+        <li class="border-b border-gray-300 dark:border-gray-800">
             <!-- peer must come BEFORE the label -->
             <input type="checkbox" id="featuresToggle" class="hidden peer" />
 
             <!-- apply a peer-checked child-target to rotate the <i> -->
             <label
                 for="featuresToggle"
-                class="flex justify-between items-center px-4 py-3 text-white cursor-pointer
+                class="flex justify-between items-center px-4 py-3 cursor-pointer
            peer-checked:[&>i]:rotate-180"
             >
                 <span>Features</span>
@@ -190,47 +221,40 @@ const articles = [
 
             <!-- submenu -->
             <ul
-                class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out peer-checked:max-h-screen flex flex-col bg-[#000000]"
+                class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out peer-checked:max-h-screen flex flex-col"
             >
                 <li>
-                    <a class="block pl-8 py-2  hover:bg-gray-900"
+                    <a class="block pl-8 py-2 hover:bg-gray-900"
                         >Category Page</a
                     >
                 </li>
-                <li class="border-t border-gray-800">
-                    <a class="block pl-8 py-2  hover:bg-gray-900"
-                        >Blog Page</a
-                    >
+                <li class="border-t border-gray-300 dark:border-gray-800">
+                    <a class="block pl-8 py-2 hover:bg-gray-900">Blog Page</a>
                 </li>
-                <li class="border-t border-gray-800">
-                    <a class="block pl-8 py-2  hover:bg-gray-900"
-                        >Post Single</a
-                    >
+                <li class="border-t border-gray-300 dark:border-gray-800">
+                    <a class="block pl-8 py-2 hover:bg-gray-900">Post Single</a>
                 </li>
-                <li class="border-t border-gray-800">
-                    <a class="block pl-8 py-2  hover:bg-gray-900"
-                        >Post Video</a
-                    >
+                <li class="border-t border-gray-300 dark:border-gray-800">
+                    <a class="block pl-8 py-2 hover:bg-gray-900">Post Video</a>
                 </li>
-                <li class="border-t border-gray-800">
-                    <a class="block pl-8 py-2  hover:bg-gray-900"
-                        >Contact Page</a
+                <li class="border-t border-gray-300 dark:border-gray-800">
+                    <a class="block pl-8 py-2 hover:bg-gray-900">Contact Page</a
                     >
                 </li>
             </ul>
         </li>
 
-        <li class="border-b border-gray-800">
-            <a href="#" class="block px-4 py-3 text-white">Fashion</a>
+        <li class="border-b border-gray-300 dark:border-gray-800">
+            <a href="#" class="block px-4 py-3">Fashion</a>
         </li>
-        <li class="border-b border-gray-800">
-            <a href="#" class="block px-4 py-3 text-white">Lifestyle</a>
+        <li class="border-b border-gray-300 dark:border-gray-800">
+            <a href="#" class="block px-4 py-3">Lifestyle</a>
         </li>
-        <li class="border-b border-gray-800">
-            <a href="#" class="block px-4 py-3 text-white">Shop</a>
+        <li class="border-b border-gray-300 dark:border-gray-800">
+            <a href="#" class="block px-4 py-3">Shop</a>
         </li>
-        <li class="border-b border-gray-800">
-            <a href="#" class="block px-4 py-3 text-white">Contact</a>
+        <li class="border-b border-gray-300 dark:border-gray-800">
+            <a href="#" class="block px-4 py-3">Contact</a>
         </li>
     </ul>
 </nav>
@@ -258,7 +282,7 @@ const articles = [
     <div class="space-y-6">
         {
             articles.map((article) => (
-                <div class="flex items-start gap-3 border-b border-gray-800 last:border-b-0 pb-4">
+                <div class="flex items-start gap-3 border-b border-gray-300 dark:border-gray-800 last:border-b-0 pb-4">
                     <div class="w-[140px] h-[110px] overflow-hidden flex-shrink-0">
                         <img
                             src={article.img}
@@ -296,14 +320,14 @@ const articles = [
 <!-- Mobile Search Sidebar -->
 <div
     id="mobileSearch"
-    class="fixed top-0 right-0 w-full sm:w-[400px] h-full bg-black text-white
+    class="fixed top-0 right-0 w-full sm:w-[400px] h-full dark:bg-black dark:text-white bg-white text-black
          transition-transform duration-500 ease-in-out
          translate-x-full z-[1100] p-6 lg:hidden"
 >
     <!-- Header -->
     <div class="flex justify-between items-center mb-6">
         <h2 class="text-lg font-bold">Search</h2>
-        <button id="closeMobileSearch" class=" text-xl">
+        <button id="closeMobileSearch" class="text-xl">
             <i class="fas fa-times"></i>
         </button>
     </div>
@@ -380,25 +404,32 @@ const articles = [
 </script>
 
 <script is:inline>
-  if (typeof window !== "undefined") {
-    const mobileSearchBtn = document.getElementById("mobileSearchBtn");
-    const mobileSearch = document.getElementById("mobileSearch");
-    const mobileSearchBackdrop = document.getElementById("mobileSearchBackdrop");
-    const closeMobileSearch = document.getElementById("closeMobileSearch");
+    if (typeof window !== "undefined") {
+        const mobileSearchBtn = document.getElementById("mobileSearchBtn");
+        const mobileSearch = document.getElementById("mobileSearch");
+        const mobileSearchBackdrop = document.getElementById(
+            "mobileSearchBackdrop",
+        );
+        const closeMobileSearch = document.getElementById("closeMobileSearch");
 
-    function openMobileSearch() {
-      mobileSearch.classList.remove("translate-x-full");
-      mobileSearchBackdrop.classList.add("opacity-100", "pointer-events-auto");
+        function openMobileSearch() {
+            mobileSearch.classList.remove("translate-x-full");
+            mobileSearchBackdrop.classList.add(
+                "opacity-100",
+                "pointer-events-auto",
+            );
+        }
+
+        function closeMobileSearchFn() {
+            mobileSearch.classList.add("translate-x-full");
+            mobileSearchBackdrop.classList.remove(
+                "opacity-100",
+                "pointer-events-auto",
+            );
+        }
+
+        mobileSearchBtn?.addEventListener("click", openMobileSearch);
+        closeMobileSearch?.addEventListener("click", closeMobileSearchFn);
+        mobileSearchBackdrop?.addEventListener("click", closeMobileSearchFn);
     }
-
-    function closeMobileSearchFn() {
-      mobileSearch.classList.add("translate-x-full");
-      mobileSearchBackdrop.classList.remove("opacity-100", "pointer-events-auto");
-    }
-
-    mobileSearchBtn?.addEventListener("click", openMobileSearch);
-    closeMobileSearch?.addEventListener("click", closeMobileSearchFn);
-    mobileSearchBackdrop?.addEventListener("click", closeMobileSearchFn);
-  }
 </script>
-
