@@ -1,0 +1,150 @@
+---
+const resourcesLinks = [
+    "What's New",
+    "Developers",
+    "Releases",
+    "Support",
+    "Cookie Policy",
+];
+const usefulLinks = ["About", "Contact", "Feedbacks", "Podcasts", "Advertise"];
+const bottomLinks = ["Privacy Policy", "Terms of Use"];
+const socialIcons = [
+    { icon: "fab fa-facebook-f", href: "#" },
+    { icon: "fab fa-twitter", href: "#" },
+    { icon: "fab fa-instagram", href: "#" },
+    { icon: "fab fa-linkedin-in", href: "#" },
+    { icon: "fab fa-youtube", href: "#" },
+];
+---
+
+<footer class="bg-black text-gray-400 py-16">
+    <div class="container mx-auto px-4 ">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+            <!-- Brand & Description -->
+            <div class="md:col-span-4">
+                <img
+                    class="mb-8 max-w-full h-auto"
+                    src="https://mlbrcemi40a6.i.optimole.com/cb:Zyxq.56bae/w:auto/h:auto/q:mauto/ig:avif/f:best/https://gossip-themes.com/beatrix/wp-content/uploads/2023/01/logo.svg"
+                    alt="Brand Logo"
+                />
+                <p class="text-[#828282] mb-4 mr-6">
+                    The stars will never align, and the traffic lights of life
+                    will never all be green at the same time. The stars will
+                    never align, and the traffic lights.
+                </p>
+                <div class="flex flex-wrap gap-6 mt-4">
+                    {
+                        socialIcons.map((social) => (
+                            <a
+                                href={social.href}
+                                class="text-white text-xl hover:text-primary"
+                            >
+                                <i class={social.icon} />
+                            </a>
+                        ))
+                    }
+                </div>
+            </div>
+
+            <!-- Resources -->
+            <div class="md:col-span-2">
+                <h5
+                    class="text-white text-2xl mb-6"
+                    style="font-family: 'Anton', sans-serif;"
+                >
+                    Resources
+                </h5>
+                <ul>
+                    {
+                        resourcesLinks.map((link) => (
+                            <li class="mb-3">
+                                <a
+                                    href="#"
+                                    class="text-[#828282] hover:text-primary block truncate hover:text-[#3CFFD0]"
+                                >
+                                    {link}
+                                </a>
+                            </li>
+                        ))
+                    }
+                </ul>
+            </div>
+
+            <!-- Useful Links -->
+            <div class="md:col-span-2">
+                <h5
+                    class="text-white text-2xl mb-6"
+                    style="font-family: 'Anton', sans-serif;"
+                >
+                    Useful Links
+                </h5>
+                <ul>
+                    {
+                        usefulLinks.map((link) => (
+                            <li class="mb-3">
+                                <a
+                                    href="#"
+                                    class="text-[#828282] hover:text-primary block truncate hover:text-[#3CFFD0]"
+                                >
+                                    {link}
+                                </a>
+                            </li>
+                        ))
+                    }
+                </ul>
+            </div>
+
+            <!-- Subscribe -->
+            <div class="md:col-span-4">
+                <h5
+                    class="text-white text-2xl mb-6"
+                    style="font-family: 'Anton', sans-serif;"
+                >
+                    Subscribe Now
+                </h5>
+                <form class="flex bg-gray-800 rounded overflow-hidden mb-4">
+                    <input
+                        type="email"
+                        placeholder="your@email.com"
+                        class="bg-[#262626] text-gray-300 px-4 py-3 flex-grow focus:outline-none w-auto min-w-0"
+                    />
+                    <button
+                        type="submit"
+                        class="bg-[#3CFFD0] text-black px-4 flex-shrink-0"
+                    >
+                        <img
+                            src="https://mlbrcemi40a6.i.optimole.com/cb:Zyxq.56bae/w:auto/h:auto/q:mauto/ig:avif/f:best/https://gossip-themes.com/beatrix/wp-content/themes/beatrix/assets/images/submit.svg"
+                            alt="Submit"
+                        />
+                    </button>
+                </form>
+
+                <label class="flex items-center text-sm text-[#828282]">
+                    <input type="checkbox" class="mr-2" /> I have read and accept
+                    the Terms & Policy
+                </label>
+            </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div
+            class="border-t border-gray-800 mt-10 pt-4 flex flex-col md:flex-row items-center justify-between text-sm text-[#828282]"
+        >
+            <div class="mb-2 md:mb-0">
+                Copyright © Beatrix 2023. All rights reserved
+            </div>
+            <div class="flex flex-wrap space-x-4">
+                {
+                    bottomLinks.map((link, i) => (
+                        <a href="#" class="hover:text-primary relative">
+                            {link}
+                            {i > 0 && (
+                                <span class="absolute left-0 h-full w-px bg-gray-700" />
+                            )}
+                        </a>
+                    ))
+                }
+            </div>
+        </div>
+    </div>
+</footer>

@@ -1,0 +1,76 @@
+---
+import "../styles/global.css";
+
+const posts = [
+  {
+    image: "https://mlbrcemi40a6.i.optimole.com/cb:Zyxq.56bae/w:auto/h:auto/q:mauto/f:best/https://gossip-themes.com/beatrix/wp-content/uploads/2023/01/protest.jpg",
+    title: "London wants to have its brexitcake and eat it too",
+    desc: "Struggling to sell one multi-million dollar home currently on the market won't",
+    category: "POLITICS",
+    author: "KRISTIN",
+    date: "JANUARY 31, 2023",
+  },
+  {
+    image: "https://mlbrcemi40a6.i.optimole.com/cb:Zyxq.56bae/w:auto/h:auto/q:mauto/f:best/https://gossip-themes.com/beatrix/wp-content/uploads/2023/01/office.webp",
+    title: "Introduction of Design Trends",
+    desc: "Struggling to sell one multi-million dollar home currently on the market won't",
+    category: "FASHION",
+    author: "KRISTIN",
+    date: "JANUARY 31, 2023",
+  },
+  {
+    image: "https://mlbrcemi40a6.i.optimole.com/cb:Zyxq.56bae/w:auto/h:auto/q:mauto/f:best/https://gossip-themes.com/beatrix/wp-content/uploads/2023/01/bloomberg.jpg",
+    title: "Creating is a privilege but it’s also a gift",
+    desc: "Struggling to sell one multi-million dollar home currently on the market won't",
+    category: "BUSINESS",
+    author: "KRISTIN",
+    date: "JANUARY 31, 2023",
+  },
+  {
+    image: "https://mlbrcemi40a6.i.optimole.com/cb:Zyxq.56bae/w:auto/h:auto/q:mauto/f:best/https://gossip-themes.com/beatrix/wp-content/uploads/2023/01/couple.webp",
+    title: "Yeah, I bought some Dogecoin today",
+    desc: "Struggling to sell one multi-million dollar home currently on the market won't",
+    category: "LIFESTYLE",
+    author: "KRISTIN",
+    date: "JANUARY 31, 2023",
+  },
+  {
+    image: "https://mlbrcemi40a6.i.optimole.com/cb:Zyxq.56bae/w:auto/h:auto/q:mauto/f:best/https://gossip-themes.com/beatrix/wp-content/uploads/2023/01/sofia.webp",
+    title: "The remarkable rise of Ryan Manson",
+    desc: "Struggling to sell one multi-million dollar home currently on the market won't",
+    category: "POLITICS",
+    author: "KRISTIN",
+    date: "JANUARY 31, 2023",
+  },
+  {
+    image: "https://mlbrcemi40a6.i.optimole.com/cb:Zyxq.56bae/w:auto/h:auto/q:mauto/f:best/https://gossip-themes.com/beatrix/wp-content/uploads/2023/01/laptop.jpg",
+    title: "Five Signs of a Highly Intelligent Person",
+    desc: "Struggling to sell one multi-million dollar home currently on the market won't",
+    category: "POLITICS",
+    author: "KRISTIN",
+    date: "JANUARY 31, 2023",
+  },
+];
+---
+
+<div class="container mx-auto py-12 p-4">
+  <h2 class="text-3xl mb-8" style="font-family: 'Anton', sans-serif;">Popular Posts</h2>
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+    {posts.map(post => (
+      <div class="post">
+        <img src={post.image}
+          alt="Post Image"
+          class="w-full h-[350px] object-cover md:h-[300px] lg:h-[200px]" />
+        <div class="mt-5 lg:text-[34px] md:text-[28px] text-2xl font-normal leading-tight"  style="font-family: 'Anton', sans-serif;">{post.title}</div>
+        <div class="text-base text-[#AEAEAE] md:mb-4 mb-2 mt-2">
+          {post.desc}
+        </div>
+        <div class="flex flex-wrap gap-4 text-[12.8px] text-gray-400 font-bold">
+          <span class="">{post.category}</span>
+          <span>BY <span class="text-[#3CFFD0]">{post.author}</span></span>
+          <span>{post.date}</span>
+        </div>
+      </div>
+    ))}
+  </div>
+</div>

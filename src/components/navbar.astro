@@ -1,0 +1,404 @@
+---
+import "../styles/global.css";
+
+const articles = [
+    {
+        img: "https://gossip-themes.com/beatrix/wp-content/uploads/2023/01/camera-pose-scaled.webp",
+        title: "Rachel Maddow Will Go Mondays Only On MSNBC",
+        author: "KRISTIN",
+        date: "JANUARY 31, 2023",
+    },
+    {
+        img: "https://gossip-themes.com/beatrix/wp-content/uploads/2023/01/brown-fashion.jpg",
+        title: "How to Get Glowing Skin With Minimal Makeup",
+        author: "KRISTIN",
+        date: "JANUARY 31, 2023",
+    },
+    {
+        img: "https://mlbrcemi40a6.i.optimole.com/cb:Zyxq.56bae/w:auto/h:auto/q:mauto/f:best/https://gossip-themes.com/beatrix/wp-content/uploads/2023/01/classic-dress-scaled.jpg",
+        title: "Using UX law in design are adept surprisingly",
+        author: "KRISTIN",
+        date: "JANUARY 31, 2023",
+    },
+    {
+        img: "https://mlbrcemi40a6.i.optimole.com/cb:Zyxq.56bae/w:auto/h:auto/q:mauto/f:best/https://gossip-themes.com/beatrix/wp-content/uploads/2023/01/sky-hat.jpg",
+        title: "Five signs of a healthy intelligent person",
+        author: "KRISTIN",
+        date: "JANUARY 31, 2023",
+    },
+];
+---
+
+<!-- NAV: put the checkbox inside the nav and BEFORE the mobile list -->
+<nav class="w-full border-b border-gray-300 relative z-[999] shadow-sm">
+    <!-- Hidden checkbox (peer) — must be inside nav and before mobile ul -->
+    <input id="mobileMenuToggle" type="checkbox" class="hidden peer" />
+
+    <div
+        class="container mx-auto flex items-center justify-between px-4 py-6 md:py-0"
+    >
+        <!-- Logo -->
+        <a href="/" class="block">
+            <img
+                src="https://gossip-themes.com/beatrix/wp-content/uploads/2023/01/logo.svg"
+                alt="Logo"
+                class="max-w-[160px] lg:max-w-[180px]"
+            />
+        </a>
+
+        <!-- Desktop Nav () -->
+        <ul
+            id="navLinks"
+            class="hidden lg:flex flex-col lg:flex-row lg:items-center lg:space-x-1 absolute lg:static top-[75px] left-0 w-full lg:w-auto bg-black lg:bg-transparent font-[anton]"
+        >
+            <li>
+                <a class="block px-5 py-3 lg:py-6  hover:text-[#3CFFD0] cursor-pointer">Home</a>
+            </li>
+
+            <li class="group relative">
+                <a class="block px-5 py-3 lg:py-6  hover:text-[#3CFFD0] cursor-pointer">Features</a>
+                <ul class="hidden absolute -left-10 top-18 bg-black w-52 group-hover:block ">
+                    <li class="border-t border-[#3CFFD0]">
+                        <a class="block px-5 py-3 text-white hover:bg-gray-900 cursor-pointer" >Category Page</a>
+                    </li>
+                    <li>
+                        <a class="block px-5 py-3 text-white hover:bg-gray-900 cursor-pointer">Blog Page</a>
+                    </li>
+                    <li>
+                        <a class="block px-5 py-3 text-white hover:bg-gray-900 cursor-pointer">Post Single</a>
+                    </li>
+                    <li>
+                        <a class="block px-5 py-3 text-white hover:bg-gray-900 cursor-pointer">Post Video</a>
+                    </li>
+                    <li>
+                        <a class="block px-5 py-3 text-white hover:bg-gray-900 cursor-pointer">Contact Page</a>
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                <a class="block px-5 py-3 lg:py-6  hover:text-[#3CFFD0] cursor-pointer">Fashion</a>
+            </li>
+            <li>
+                <a  class="block px-5 py-3 lg:py-6  hover:text-[#3CFFD0] cursor-pointer">Lifestyle</a>
+            </li>
+            <li>
+                <a class="block px-5 py-3 lg:py-6  hover:text-[#3CFFD0] cursor-pointer">Shop</a>
+            </li>
+            <li>
+                <a class="block px-5 py-3 lg:py-6  hover:text-[#3CFFD0] cursor-pointer">Contact</a>
+            </li>
+        </ul>
+
+        <!-- Right Controls -->
+        <div class="flex items-center gap-6">
+            <!-- Search Input (desktop only) -->
+            <div class="hidden lg:block relative max-w-xs">
+                <input
+                    type="text"
+                    placeholder="Search..."
+                    class="w-full px-4 py-2 pr-8 bg-transparent border-b border-gray-600 text-gray-200 placeholder-gray-400 focus:outline-none focus:border-[#3CFFD0]"
+                />
+                <i
+                    class="fa fa-search absolute right-2 top-1/2 -translate-y-1/2 text-gray-400"
+                ></i>
+            </div>
+
+            <!-- Search Button (mobile only) -->
+            <button
+                id="mobileSearchBtn"
+                class=" hover:text-[#3CFFD0] md:hidden block"
+            >
+                <i class="fa fa-search"></i>
+            </button>
+
+            <div
+  id="mobileSearchBackdrop"
+  class="fixed inset-0 bg-black/50 z-[1090] opacity-0 pointer-events-none transition-opacity duration-500 lg:hidden"
+></div>
+
+
+            <!-- Theme Toggle -->
+            <button
+                id="theme-toggle"
+                class=" hover:text-[#3CFFD0]"
+            >
+                <i class="fas fa-moon hidden lg:inline"></i>
+            </button>
+
+            <!-- Subscribe (desktop only) -->
+            <button
+                class="hidden lg:flex items-center border border-[#3CFFD0]  px-6 py-3 hover:bg-[#3CFFD0] hover:text-black transition"
+                style="font-family: 'Anton', sans-serif;"
+            >
+                <i class="fas fa-play mr-2"></i>Subscribe
+            </button>
+
+            <!-- Right-side menu trigger (desktop only) -->
+            <button
+                id="rightMenuBtn"
+                class="hidden lg:inline-block  cursor-pointer"
+            >
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <!-- Backdrop Overlay for right sidebar -->
+            <div
+                id="rightMenuBackdrop"
+                class="fixed inset-0 bg-black/50 z-[1040] opacity-0 pointer-events-none transition-opacity duration-500"
+            >
+            </div>
+
+            <!-- Mobile menu button (label for the checkbox) -->
+            <label
+                for="mobileMenuToggle"
+                class="lg:hidden  cursor-pointer"
+            >
+                <i class="fas fa-bars"></i>
+            </label>
+        </div>
+    </div>
+
+    <!-- MOBILE NAV -->
+    <ul
+        class="lg:hidden flex flex-col bg-black w-full absolute top-[73px] left-0
+         max-h-0 overflow-hidden transition-all duration-500 ease-in-out
+         peer-checked:max-h-screen"
+    >
+        <li class="border-b border-gray-800">
+            <a href="#" class="block px-4 py-3 text-white">Home</a>
+        </li>
+
+        <!-- Features  -->
+        <li class="border-b border-gray-800">
+            <!-- peer must come BEFORE the label -->
+            <input type="checkbox" id="featuresToggle" class="hidden peer" />
+
+            <!-- apply a peer-checked child-target to rotate the <i> -->
+            <label
+                for="featuresToggle"
+                class="flex justify-between items-center px-4 py-3 text-white cursor-pointer
+           peer-checked:[&>i]:rotate-180"
+            >
+                <span>Features</span>
+
+                <!-- make the icon inline-block so transforms work -->
+                <i
+                    class="fas fa-chevron-down inline-block transform transition-transform duration-300 ease-in-out"
+                ></i>
+            </label>
+
+            <!-- submenu -->
+            <ul
+                class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out peer-checked:max-h-screen flex flex-col bg-[#000000]"
+            >
+                <li>
+                    <a class="block pl-8 py-2  hover:bg-gray-900"
+                        >Category Page</a
+                    >
+                </li>
+                <li class="border-t border-gray-800">
+                    <a class="block pl-8 py-2  hover:bg-gray-900"
+                        >Blog Page</a
+                    >
+                </li>
+                <li class="border-t border-gray-800">
+                    <a class="block pl-8 py-2  hover:bg-gray-900"
+                        >Post Single</a
+                    >
+                </li>
+                <li class="border-t border-gray-800">
+                    <a class="block pl-8 py-2  hover:bg-gray-900"
+                        >Post Video</a
+                    >
+                </li>
+                <li class="border-t border-gray-800">
+                    <a class="block pl-8 py-2  hover:bg-gray-900"
+                        >Contact Page</a
+                    >
+                </li>
+            </ul>
+        </li>
+
+        <li class="border-b border-gray-800">
+            <a href="#" class="block px-4 py-3 text-white">Fashion</a>
+        </li>
+        <li class="border-b border-gray-800">
+            <a href="#" class="block px-4 py-3 text-white">Lifestyle</a>
+        </li>
+        <li class="border-b border-gray-800">
+            <a href="#" class="block px-4 py-3 text-white">Shop</a>
+        </li>
+        <li class="border-b border-gray-800">
+            <a href="#" class="block px-4 py-3 text-white">Contact</a>
+        </li>
+    </ul>
+</nav>
+
+<!-- Right Side Menu (desktop right-sidebar) -->
+<div
+    id="rightSidebar"
+    class="fixed top-0 right-0 w-[480px] h-full bg-black text-white
+         transition-transform duration-700 overflow-y-auto p-12 z-[1050]
+         translate-x-full"
+>
+    <!-- Header -->
+    <div class="flex justify-between items-center mb-8">
+        <img
+            src="https://gossip-themes.com/beatrix/wp-content/uploads/2023/01/logo.svg"
+            class="max-w-[120px]"
+            alt="Logo"
+        />
+        <button id="closeRightMenu" class="cursor-pointer text-lg">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+
+    <!-- Articles sidebar -->
+    <div class="space-y-6">
+        {
+            articles.map((article) => (
+                <div class="flex items-start gap-3 border-b border-gray-800 last:border-b-0 pb-4">
+                    <div class="w-[140px] h-[110px] overflow-hidden flex-shrink-0">
+                        <img
+                            src={article.img}
+                            alt={article.title}
+                            class="w-full h-full object-cover object-center block"
+                        />
+                    </div>
+                    <div>
+                        <h6
+                            class="text-[20px]"
+                            style="font-family: 'Anton', sans-serif;"
+                        >
+                            {article.title}
+                        </h6>
+                        <div class="mt-2 text-[10px] sm:text-xs text-gray-400 flex gap-2 items-center">
+                            <span class="text-[#3CFFD0]">{article.author}</span>
+                            <span>{article.date}</span>
+                        </div>
+                    </div>
+                </div>
+            ))
+        }
+    </div>
+
+    <!-- Social Icons -->
+    <div class="flex justify-center space-x-4 mt-8 text-gray-400">
+        <i class="fab fa-facebook-f"></i>
+        <i class="fab fa-twitter"></i>
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-linkedin-in"></i>
+        <i class="fab fa-youtube"></i>
+    </div>
+</div>
+
+<!-- Mobile Search Sidebar -->
+<div
+    id="mobileSearch"
+    class="fixed top-0 right-0 w-full sm:w-[400px] h-full bg-black text-white
+         transition-transform duration-500 ease-in-out
+         translate-x-full z-[1100] p-6 lg:hidden"
+>
+    <!-- Header -->
+    <div class="flex justify-between items-center mb-6">
+        <h2 class="text-lg font-bold">Search</h2>
+        <button id="closeMobileSearch" class=" text-xl">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+
+    <!-- Search Input -->
+    <div class="relative">
+        <input
+            type="text"
+            placeholder="Type to search..."
+            class="w-full px-4 py-3 pr-10 bg-transparent border-b border-gray-600 text-gray-200 placeholder-gray-400 focus:outline-none focus:border-[#3CFFD0]"
+        />
+        <i
+            class="fa fa-search absolute right-3 top-1/2 -translate-y-1/2 text-gray-400"
+        ></i>
+    </div>
+</div>
+
+<!-- Right-sidebar scripts -->
+<script is:inline>
+    if (typeof window !== "undefined") {
+        const rightMenuBtn = document.getElementById("rightMenuBtn");
+        const rightMenu = document.getElementById("rightSidebar");
+        const backdrop = document.getElementById("rightMenuBackdrop");
+        const closeBtn = document.getElementById("closeRightMenu");
+
+        function openRightMenu() {
+            if (window.innerWidth >= 1024) {
+                rightMenu.classList.remove("translate-x-full");
+                backdrop.classList.add("opacity-100", "pointer-events-auto");
+            }
+        }
+
+        function closeRightMenu() {
+            rightMenu.classList.add("translate-x-full");
+            backdrop.classList.remove("opacity-100", "pointer-events-auto");
+        }
+
+        rightMenuBtn?.addEventListener("click", openRightMenu);
+        backdrop?.addEventListener("click", closeRightMenu);
+        closeBtn?.addEventListener("click", closeRightMenu);
+
+        window.addEventListener("resize", () => {
+            if (window.innerWidth < 1024) closeRightMenu();
+        });
+    }
+</script>
+
+<!-- Theme toggle script  -->
+<script is:inline>
+    if (typeof window !== "undefined") {
+        const html = document.documentElement;
+        const button = document.getElementById("theme-toggle");
+
+        if (localStorage.theme === "light") {
+            html.classList.remove("dark");
+            button.innerHTML = '<i class="fa-solid fa-sun"></i>';
+        } else {
+            html.classList.add("dark");
+            button.innerHTML = '<i class="fa-solid fa-moon"></i>';
+        }
+
+        button?.addEventListener("click", () => {
+            if (html.classList.contains("dark")) {
+                html.classList.remove("dark");
+                localStorage.theme = "light";
+                button.innerHTML = '<i class="fa-solid fa-sun"></i>';
+            } else {
+                html.classList.add("dark");
+                localStorage.theme = "dark";
+                button.innerHTML = '<i class="fa-solid fa-moon"></i>';
+            }
+        });
+    }
+</script>
+
+<script is:inline>
+  if (typeof window !== "undefined") {
+    const mobileSearchBtn = document.getElementById("mobileSearchBtn");
+    const mobileSearch = document.getElementById("mobileSearch");
+    const mobileSearchBackdrop = document.getElementById("mobileSearchBackdrop");
+    const closeMobileSearch = document.getElementById("closeMobileSearch");
+
+    function openMobileSearch() {
+      mobileSearch.classList.remove("translate-x-full");
+      mobileSearchBackdrop.classList.add("opacity-100", "pointer-events-auto");
+    }
+
+    function closeMobileSearchFn() {
+      mobileSearch.classList.add("translate-x-full");
+      mobileSearchBackdrop.classList.remove("opacity-100", "pointer-events-auto");
+    }
+
+    mobileSearchBtn?.addEventListener("click", openMobileSearch);
+    closeMobileSearch?.addEventListener("click", closeMobileSearchFn);
+    mobileSearchBackdrop?.addEventListener("click", closeMobileSearchFn);
+  }
+</script>
+

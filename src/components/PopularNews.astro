@@ -1,0 +1,47 @@
+---
+const popularArticles = [
+  {
+    img: "camera-pose-scaled.webp",
+    title: "Rachel Maddow Will Go Mondays Only On MSNBC",
+    author: "KRISTIN",
+    date: "JANUARY 31, 2023",
+  },
+  {
+    img: "brown-fashion.jpg",
+    title: "How to Get Glowing Skin With Minimal Makeup",
+    author: "KRISTIN",
+    date: "JANUARY 31, 2023",
+  },
+  {
+    img: "classic-dress-scaled.jpg",
+    title: "Using UX law in design are adept surprisingly",
+    author: "KRISTIN",
+    date: "JANUARY 31, 2023",
+  },
+  {
+    img: "sky-hat.jpg",
+    title: "Five signs of a healthy intelligent person",
+    author: "KRISTIN",
+    date: "JANUARY 31, 2023",
+  },
+];
+---
+
+<div class="col-lg-6 mt-5 mt-lg-0">
+  <h5 class="section-title mb-8 text-xl" style="font-size: 22px; font-family: 'Anton', sans-serif;" >Popular on Beatrix</h5>
+
+  {popularArticles.map((article, index) => (
+    <div class={`right-article flex flex-col md:flex-row items-start border-b border-[#333] pb-6 mb-6 ${index === popularArticles.length - 1 ? 'border-b-0' : ''}`}>
+      <div class="img-wrapper w-full md:w-[140px] h-[350px] overflow-hidden flex-shrink-0 md:h-[110px]">
+        <img src={`https://mlbrcemi40a6.i.optimole.com/cb:Zyxq.56bae/w:auto/h:auto/q:mauto/f:best/https://gossip-themes.com/beatrix/wp-content/uploads/2023/01/${article.img}`} alt="" class="w-full h-full object-cover object-center block" />
+      </div>
+      <div class="mt-4 md:mt-0 md:ml-4">
+        <h6 class="text-[20px] font-normal leading-[1.15] tracking-[-0.01em]"   style="font-family: 'Anton', sans-serif;">{article.title}</h6>
+        <div class="mt-2 text-[10px] sm:text-xs text-gray-400 flex gap-2 items-center">
+          <span class="text-[#3CFFD0]">{article.author}</span>
+          <span >{article.date}</span>
+        </div>
+      </div>
+    </div>
+  ))}
+</div>

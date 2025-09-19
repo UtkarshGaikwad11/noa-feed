@@ -1,0 +1,114 @@
+---
+import "../styles/global.css";
+---
+
+<div class="bg-[#2c2c2c] py-5 mt-8">
+    <div class="container mx-auto px-4">
+        <!-- Header -->
+        <div class="flex justify-between items-center mb-8 pt-7">
+            <div
+                class="text-2xl text-white font-sans"
+                style="font-family: 'Anton', sans-serif;"
+            >
+                Featured Videos
+            </div>
+            <div class="text-white text-lg font-medium hidden md:block">
+                See All Videos
+            </div>
+        </div>
+
+        <!-- Videos Layout -->
+        <div class="flex flex-wrap -mx-4">
+            <!-- Left Large Video -->
+            <div class="w-full lg:w-7/12 px-4 mb-6 lg:mb-0">
+                <div class="relative overflow-hidden mb-4 h-[440px]">
+                    <img
+                        src="https://mlbrcemi40a6.i.optimole.com/cb:Zyxq.56bae/w:auto/h:auto/q:mauto/f:best/https://gossip-themes.com/beatrix/wp-content/uploads/2023/01/singer.jpg"
+                        alt="Video"
+                        class="w-full h-full object-cover"
+                    />
+                    <div
+                        class="absolute top-2 left-2 w-10 h-10 rounded-full bg-[#00f7d4] flex items-center justify-center"
+                    >
+                        <span class="text-black text-xl">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="currentColor"
+                                viewBox="0 0 24 24"
+                                class="w-6 h-6"
+                            >
+                                <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                            </svg>
+                        </span>
+                    </div>
+                </div>
+                <div
+                    class="text-white text-4xl font-sans mb-4"
+                    style="font-family: 'Anton', sans-serif;"
+                >
+                    8 Reasons to become a Design Preneur
+                </div>
+                <p class="text-[#AEAEAE] text-base">
+                    Struggling to sell one multi-million dollar home currently
+                    on the market won’t stop actress and singer Jennifer Lopez
+                    from expanding
+                </p>
+            </div>
+
+            <!-- Right Video List -->
+            <div class="w-full lg:w-5/12 px-4 space-y-6">
+                {/** Video Item Template */}
+                {
+                    [
+                        {
+                            img: "https://mlbrcemi40a6.i.optimole.com/cb:Zyxq.56bae/w:auto/h:auto/q:mauto/f:best/https://gossip-themes.com/beatrix/wp-content/uploads/2023/01/model.jpg",
+                            title: "Maddie Zieglers Takes a Lie Detector Test",
+                        },
+                        {
+                            img: "https://mlbrcemi40a6.i.optimole.com/cb:Zyxq.56bae/w:auto/h:auto/q:mauto/f:best/https://gossip-themes.com/beatrix/wp-content/uploads/2023/01/beach.jpg",
+                            title: "The dark fate that awaits every player",
+                        },
+                        {
+                            img: "https://mlbrcemi40a6.i.optimole.com/cb:Zyxq.56bae/w:auto/h:auto/q:mauto/f:best/https://gossip-themes.com/beatrix/wp-content/uploads/2023/01/sky-open.jpg",
+                            title: "Perfection has to do with the end product",
+                        },
+                    ].map(({ img, title }) => (
+                        <div class="flex flex-col md:flex-row items-center md:items-start space-y-4 md:space-y-0 md:space-x-4 text-white">
+                            <div class="relative w-full md:w-[193px] md:h-[158px] h-[350px] flex-shrink-0 overflow-hidden">
+                                <img
+                                    src={img}
+                                    alt="Video Thumbnail"
+                                    class="w-full h-full object-cover"
+                                />
+                                <div class="absolute top-2 left-2 w-10 h-10 rounded-full bg-[#00f7d4] flex items-center justify-center">
+                                    <span class="text-black text-xl">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            fill="currentColor"
+                                            viewBox="0 0 24 24"
+                                            class="w-6 h-6"
+                                        >
+                                            <polygon points="5 3 19 12 5 21 5 3" />
+                                        </svg>
+                                    </span>
+                                </div>
+                            </div>
+                            <div>
+                                <div
+                                    class="text-xl md:text-2xl font-sans mb-2"
+                                    style="font-family: 'Anton', sans-serif;"
+                                >
+                                    {title}
+                                </div>
+                                <div class="text-sm text-[#AEAEAE] font-bold space-x-2 mt-2">
+                                    <span class="text-[#3CFFD0]">KRISTIN</span>
+                                    <span>JANUARY 31, 2023</span>
+                                </div>
+                            </div>
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
+    </div>
+</div>

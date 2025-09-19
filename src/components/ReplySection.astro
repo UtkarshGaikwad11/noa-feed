@@ -1,0 +1,40 @@
+---
+import "../styles/global.css";
+---
+
+<div class="comment-section mt-12">
+  <h4 class="text-white font-primary text-2xl mb-6">Leave a Reply</h4>
+  <form>
+    <div class="grid md:grid-cols-2 gap-4 mb-4">
+      <input
+        type="text"
+        class="w-full bg-transparent text-[#454545] dark:text-white p-3 border border-gray-200 focus:border-[#3CFFD0] outline-none transition"
+        placeholder="Enter Name"
+      />
+      <input
+        type="email"
+        class="w-full bg-transparent text-[#454545] dark:text-white p-3 border border-gray-200 focus:border-[#3CFFD0] outline-none transition"
+        placeholder="Enter Email"
+      />
+    </div>
+
+    <input
+      type="text"
+      class="w-full bg-transparent text-[#454545] dark:text-white p-3 border border-gray-200 focus:border-[#3CFFD0] outline-none transition mb-4"
+      placeholder="Enter Website"
+    />
+
+    <textarea
+      rows="8"
+      class="w-full bg-transparent text-[#454545] dark:text-white p-3 border border-gray-200 focus:border[#3CFFD0] outline-none transition"
+      placeholder="Enter Comments"
+    ></textarea>
+
+    <button
+      type="submit"
+      class="bg-primary border w-full py-4 mt-4 text-black bg-[#3CFFD0] hover:bg-black hover:text-[#3CFFD0] hover:border-[#3CFFD0]" style="font-family: 'Anton', sans-serif;"
+    >
+      Post Comment
+    </button>
+  </form>
+</div>

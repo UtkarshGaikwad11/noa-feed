@@ -1,0 +1,64 @@
+---
+// RelatedPosts.astro
+
+const posts = [
+  {
+    title: "Corporations Are People, Too",
+    desc: "Struggling to sell one multi-million dollar home currently on the market",
+    author: "KRISTIN",
+    date: "JANUARY 31, 2023",
+    img: "https://mlbrcemi40a6.i.optimole.com/cb:Zyxq.56bae/w:auto/h:auto/q:mauto/f:best/https://gossip-themes.com/beatrix/wp-content/uploads/2023/01/yellow-diva.jpg",
+  },
+  {
+    title: "Five signs of a healthy intelligent person",
+    desc: "Struggling to sell one multi-million dollar home currently on the market",
+    author: "KRISTIN",
+    date: "JANUARY 31, 2023",
+    img: "https://mlbrcemi40a6.i.optimole.com/cb:Zyxq.56bae/w:auto/h:auto/q:mauto/f:best/https://gossip-themes.com/beatrix/wp-content/uploads/2023/01/sky-hat.jpg",
+  },
+  {
+    title: "London wants to have its brexitcake and eat it too",
+    desc: "Struggling to sell one multi-million dollar home currently on the market",
+    author: "KRISTIN",
+    date: "JANUARY 31, 2023",
+    img: "https://mlbrcemi40a6.i.optimole.com/cb:Zyxq.56bae/w:auto/h:auto/q:mauto/f:best/https://gossip-themes.com/beatrix/wp-content/uploads/2023/01/protest.jpg",
+  },
+];
+---
+
+<div class="py-10">
+  <h2 class="text-2xl md:text-3xl mb-8 md:mt-16" style="font-family: 'Anton', sans-serif;">Related Posts</h2>
+
+  <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+    {posts.map((post) => (
+      <div class="post">
+        <!-- Image -->
+        <img
+          src={post.img}
+          alt={post.title}
+          class="w-full object-cover h-[244px]"
+        />
+
+        <!-- Title -->
+        <div class="text-2xl md:text-[28px] lg:text-[34px] mt-4" style="font-family: 'Anton', sans-serif;">
+          {post.title}
+        </div>
+
+        <!-- Description -->
+        <p class="text-gray-600 dark:text-[#AEAEAE] text-[16px] mt-2">
+          {post.desc}
+        </p>
+
+        <!-- Meta -->
+                <div
+            class="mt-4 text-xs md:text-sm text-gray-500 flex flex-wrap gap-3 items-center"
+        >
+            <span>
+                BY <span class="font-semibold text-[#3CFFD0]">{post.author}</span>
+            </span>
+            <span class="uppercase">{post.date}</span>
+        </div>
+      </div>
+    ))}
+  </div>
+</div>

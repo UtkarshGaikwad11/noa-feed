@@ -1,0 +1,28 @@
+---
+import Footer from '../components/Footer.astro';
+import Navbar from '../components/navbar.astro';
+import "../styles/global.css";
+---
+
+<html lang="en" data-theme="dark">
+  <head>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+/>
+
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+    <title>My News Site</title>
+  </head>
+  <body class="bg-[#131313]">
+    <Navbar />  
+    <main>
+      <slot /> <!-- Content injected here -->
+    </main>
+    <Footer/>
+  </body>
+</html>

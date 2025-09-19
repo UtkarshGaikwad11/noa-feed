@@ -1,0 +1,24 @@
+---
+import NewsDetail from '../components/NewsDetail.astro';
+import PopularNews from '../components/PopularNews.astro';
+import RelatedPosts from '../components/RelatedPosts.astro';
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout>
+  <section class="container mx-auto px-3 py-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+      <!-- Left Content: 8 columns on large screens -->
+      <div class="lg:col-span-8">
+        <NewsDetail />
+      </div>
+
+      <!-- Right Sidebar: 4 columns on large screens -->
+      <div class="lg:col-span-4">
+        <PopularNews/>
+      </div>
+    </div>
+    <RelatedPosts/>
+  </section>
+</Layout>
+
