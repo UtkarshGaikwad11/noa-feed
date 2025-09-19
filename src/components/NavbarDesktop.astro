@@ -1,0 +1,127 @@
+---
+const articles = [
+  {
+    img: "https://gossip-themes.com/beatrix/wp-content/uploads/2023/01/camera-pose-scaled.webp",
+    title: "Rachel Maddow Will Go Mondays Only On MSNBC",
+    author: "KRISTIN",
+    date: "JANUARY 31, 2023",
+  },
+  {
+    img: "https://gossip-themes.com/beatrix/wp-content/uploads/2023/01/brown-fashion.jpg",
+    title: "How to Get Glowing Skin With Minimal Makeup",
+    author: "KRISTIN",
+    date: "JANUARY 31, 2023",
+  },
+  {
+    img: "https://mlbrcemi40a6.i.optimole.com/cb:Zyxq.56bae/w:auto/h:auto/q:mauto/f:best/https://gossip-themes.com/beatrix/wp-content/uploads/2023/01/classic-dress-scaled.jpg",
+    title: "Using UX law in design are adept surprisingly",
+    author: "KRISTIN",
+    date: "JANUARY 31, 2023",
+  },
+  {
+    img: "https://mlbrcemi40a6.i.optimole.com/cb:Zyxq.56bae/w:auto/h:auto/q:mauto/f:best/https://gossip-themes.com/beatrix/wp-content/uploads/2023/01/sky-hat.jpg",
+    title: "Five signs of a healthy intelligent person",
+    author: "KRISTIN",
+    date: "JANUARY 31, 2023",
+  },
+];
+---
+
+<!-- Desktop Navbar -->
+<nav class="hidden lg:flex w-full border-b bg-[#131313] border-gray-800 relative z-[999]">
+  <div class="container mx-auto flex items-center justify-between px-4 py-2">
+    <!-- Logo -->
+    <a href="/" class="block">
+      <img
+        src="https://gossip-themes.com/beatrix/wp-content/uploads/2023/01/logo.svg"
+        alt="Logo"
+        class="max-w-[180px]"
+      />
+    </a>
+
+    <!-- Nav links -->
+    <ul class="flex items-center space-x-1">
+      <li><a href="#" class="px-5 py-6 text-gray-300 hover:text-[#3CFFD0]">Home</a></li>
+
+      <li class="group relative">
+        <a href="#" class="px-5 py-6 text-gray-300 hover:text-[#3CFFD0]">Features</a>
+        <ul class="hidden absolute left-0 top-full bg-black w-52 group-hover:block py-2">
+          <li class="border-t border-[#3CFFD0]"><a href="#" class="block px-5 py-3 text-white hover:bg-gray-900">Category Page</a></li>
+          <li><a href="#" class="block px-5 py-3 text-white hover:bg-gray-900">Blog Page</a></li>
+          <li><a href="#" class="block px-5 py-3 text-white hover:bg-gray-900">Post Single</a></li>
+          <li><a href="#" class="block px-5 py-3 text-white hover:bg-gray-900">Post Video</a></li>
+          <li><a href="#" class="block px-5 py-3 text-white hover:bg-gray-900">Contact Page</a></li>
+        </ul>
+      </li>
+
+      <li><a href="#" class="px-5 py-6 text-gray-300 hover:text-[#3CFFD0]">Fashion</a></li>
+      <li><a href="#" class="px-5 py-6 text-gray-300 hover:text-[#3CFFD0]">Lifestyle</a></li>
+      <li><a href="#" class="px-5 py-6 text-gray-300 hover:text-[#3CFFD0]">Shop</a></li>
+      <li><a href="#" class="px-5 py-6 text-gray-300 hover:text-[#3CFFD0]">Contact</a></li>
+    </ul>
+
+    <!-- Right Controls -->
+    <div class="flex items-center gap-6">
+      <!-- Search -->
+      <div class="relative max-w-xs">
+        <input type="text" placeholder="Search..."
+          class="w-full px-4 py-2 pr-8 bg-transparent border-b border-gray-600 text-gray-200 placeholder-gray-400 focus:outline-none focus:border-[#3CFFD0]" />
+        <i class="fa fa-search absolute right-2 top-1/2 -translate-y-1/2 text-gray-400"></i>
+      </div>
+
+      <!-- Theme Toggle -->
+      <button id="theme-toggle" class="text-gray-300 hover:text-[#3CFFD0]">
+        <i class="fas fa-moon"></i>
+      </button>
+
+      <!-- Subscribe -->
+      <button
+        class="flex items-center border border-[#3CFFD0] text-white px-6 py-3 hover:bg-[#3CFFD0] hover:text-black transition"
+        style="font-family: 'Anton', sans-serif;">
+        <i class="fas fa-play mr-2"></i>Subscribe
+      </button>
+
+      <!-- Right-side menu trigger -->
+      <button id="rightMenuBtn" class="text-gray-300 cursor-pointer">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Right Sidebar -->
+<div id="rightSidebar"
+  class="fixed top-0 right-0 w-[480px] h-full bg-black text-white transition-transform duration-700 overflow-y-auto p-12 z-[1050] translate-x-full">
+  <div class="flex justify-between items-center mb-8">
+    <img src="https://gossip-themes.com/beatrix/wp-content/uploads/2023/01/logo.svg" class="max-w-[120px]" alt="Logo" />
+    <button id="closeRightMenu" class="cursor-pointer text-lg"><i class="fas fa-times"></i></button>
+  </div>
+
+  <div class="space-y-6">
+    {articles.map((article) => (
+      <div class="flex items-start gap-3 border-b border-gray-800 last:border-b-0 pb-4">
+        <div class="w-[140px] h-[110px] overflow-hidden flex-shrink-0">
+          <img src={article.img} alt={article.title} class="w-full h-full object-cover object-center block" />
+        </div>
+        <div>
+          <h6 class="text-[20px]" style="font-family: 'Anton', sans-serif;">{article.title}</h6>
+          <div class="mt-2 text-[10px] sm:text-xs text-gray-400 flex gap-2 items-center">
+            <span class="text-[#3CFFD0]">{article.author}</span>
+            <span>{article.date}</span>
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+
+  <div class="flex justify-center space-x-4 mt-8 text-gray-400">
+    <i class="fab fa-facebook-f"></i>
+    <i class="fab fa-twitter"></i>
+    <i class="fab fa-instagram"></i>
+    <i class="fab fa-linkedin-in"></i>
+    <i class="fab fa-youtube"></i>
+  </div>
+</div>
+
+<div id="rightMenuBackdrop"
+  class="fixed inset-0 bg-black/50 z-[1040] opacity-0 pointer-events-none transition-opacity duration-500"></div>
